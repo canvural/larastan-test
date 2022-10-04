@@ -1,0 +1,73 @@
+{
+    "name": "canvural/larastan-test",
+    "description": "This is a test Laravel package for Larastan",
+    "keywords": [
+        "canvural",
+        "laravel",
+        "larastan"
+    ],
+    "homepage": "https://github.com/canvural/larastan-test",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Can Vural",
+            "email": "can9119@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^9.0",
+        "spatie/laravel-collection-macros": "^7.12",
+        "spatie/laravel-package-tools": "^1.13.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.2",
+        "orchestra/testbench": "^7.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vural\\LarastanTest\\": "src",
+            "Vural\\LarastanTest\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vural\\LarastanTest\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vural\\LarastanTest\\LarastanTestServiceProvider"
+            ],
+            "aliases": {
+                "LarastanTest": "Vural\\LarastanTest\\Facades\\LarastanTest"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
