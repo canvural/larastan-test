@@ -1,0 +1,2 @@
+providers:
+  - Vural\LarastanTest\LarastanTestServiceProvider

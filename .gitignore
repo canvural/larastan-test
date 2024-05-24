@@ -6,7 +6,6 @@ coverage
 docs
 phpunit.xml
 phpstan.neon
-testbench.yaml
 vendor
 my-custom-vendor-dir
 node_modules
